@@ -30,7 +30,8 @@
         <a href="{% url 'login' %}">Log-in</a>
         {% endif %}
       </span>
-      <div>
+    </div>
+    <div>
         {% if messages %}
         <ul class="messages">
           {% for message in messages %}
@@ -42,7 +43,6 @@
         </ul>
         {% endif %}
       </div>
-    </div>
     {% block content %}
     {% endblock %}
 </html>
