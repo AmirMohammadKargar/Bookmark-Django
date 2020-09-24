@@ -1,5 +1,9 @@
 {% extends "base.html" %} {% block title %}Log-in{% endblock %}
-<div></div>
+<div>
+  <li class="google">
+    <a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a>
+  </li>
+</div>
 {% block content %}
 <h1>Log-in</h1>
 {% if form.errors %}
