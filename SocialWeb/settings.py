@@ -125,3 +125,6 @@ AUTHENTICATION_BACKENDS = [
 'account.authentication.EmailAuthBackend',
 'social_core.backends.google.GoogleOAuth2',
 ]
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '400005541356-vogtpofg3oklto4ic0s66qn9n4binqp9.apps.googleusercontent.com' # Google Consumer Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'SJE98pDcxM97pkXEk80IS5Bf' # Google Consumer Secret
