@@ -7,9 +7,7 @@ from .models import Profile
 from django.contrib import messages
 
 def dashboard(request):
-    return render(request,
-    'account/dashboard.html',
-        {'section': 'dashboard'})
+    return render(request,'account/dashboard.html',{'section': 'dashboard'})
 
 def register(request):
     if request.method == 'POST':
