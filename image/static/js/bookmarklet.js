@@ -30,6 +30,18 @@
                     image_url + '" /></a>');
             }
         });
+        // when an image is selected open URL with it
+        jQuery('#bookmarklet .images a').click(function (e) {
+            selected_image = jQuery(this).children('img').attr('src');
+            // hide bookmarklet
+            jQuery('#bookmarklet').hide();
+            // open new window to submit the image
+            window.open(site_url + 'images/create/?url='
+                + encodeURIComponent(selected_image)
+                + '&title='
+                + encodeURIComponent(jQuery('title').text()),
+                '_blank');
+        });
     };
     if (typeof window.jQuery != 'undefined') {
         bookmarklet();
