@@ -91,4 +91,4 @@ def image_ranking(request):
     # get most viewed images
     most_viewed = list(Image.objects.filter(id__in=image_ranking_ids))
     most_viewed.sort(key=lambda x: image_ranking_ids.index(x.id))
-    return render(request,'images/image/ranking.html',{'section': 'images','most_viewed': most_viewed})
+    return render(request,'image/image/ranking.html',{'section': 'images','most_viewed': most_viewed})
