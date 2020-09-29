@@ -12,9 +12,17 @@ from django.views.decorators.http import require_POST
 from common.decorators import ajax_required
 from .models import Contact
 from actions.utils import create_action
+from actions.models import Action
 
 def dashboard(request):
-    return render(request,'account/dashboard.html',{'section': 'dashboard'})
+    # Display all actions by default
+    actions = Action.objects.exclude(user=request.user)
+    following_ids = request.user.following.values_list('id',flat=True)
+    if following_ids:
+    # If user is following others, retrieve only their actions
+        actions = actions.filter(user_id__in=following_ids)
+    actions = actions[:10]
+    return render(request,'account/dashboard.html',{'section': 'dashboard','actions': actions})
 
 def register(request):
     if request.method == 'POST':
