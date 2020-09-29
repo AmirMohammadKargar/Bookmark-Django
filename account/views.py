@@ -11,8 +11,8 @@ from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from common.decorators import ajax_required
 from .models import Contact
-from actions.utils import create_action
-from actions.models import Action
+from action.utils import create_action
+from action.models import Action
 
 def dashboard(request):
     # Display all actions by default
